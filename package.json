@@ -1,0 +1,22 @@
+{
+  "name": "palette-generator",
+  "version": "1.0.0",
+  "description": "Palette generator for PV design system",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p1nta/palette-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p1nta/palette-generator/issues"
+  },
+  "homepage": "https://github.com/p1nta/palette-generator#readme",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  }
+}
