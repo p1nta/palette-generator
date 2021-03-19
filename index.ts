@@ -4,22 +4,20 @@ const input = document.getElementById('color-input');
 const container = document.getElementById('result-container');
 
 function renderPalette(colors: TGeneratedColor[]) {
+  const containerDiv = document.createElement('div');
+  containerDiv.classList.add('palette')
+
   for (let i = 0; i < colors.length; i += 1) {
     const element = colors[i];
+    containerDiv.style.display = 'flex';
     
+
     const div = document.createElement('div');
+    div.classList.add('palette_color')
     div.style.backgroundColor = element.hex;
-    div.style.width = 'calc(100vw / 11)';
-    div.style.height = 'calc(100vw / 11)';
-    div.style.color = 'white';
-    div.style.fontSize = '13px';
-    div.style.textAlign = 'center';
-    div.style.display = 'flex';
-    div.style.flexDirection = 'column';
-    div.style.alignItems = 'center';
 
     if (element.hsb.b > 80) {
-      div.style.color = '#8F999E';
+      div.style.color = 'black';
     }
 
     const pHex = document.createElement('p');
@@ -33,8 +31,10 @@ function renderPalette(colors: TGeneratedColor[]) {
 
     div.append(pHex, pRgb, pHsb);
 
-    container.appendChild(div);
+    containerDiv.appendChild(div);
   }
+
+  container.appendChild(containerDiv);
 }
 
 input.onchange = (event) => {
